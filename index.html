@@ -1,479 +1,214 @@
 <!DOCTYPE html>
 <html lang="vi">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ngọc Rồng Cindy - Sắp Ra Mắt Server Mới</title>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&display=swap"
-            rel="stylesheet">
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Ngọc Rồng</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
 
-        <style>
-        :root {
-            --primary-color: #ff9900;
-            --secondary-color: #ff3300;
-            --bg-dark: #0b0c10;
-            --card-bg: rgba(31, 40, 51, 0.6);
-            --text-glow: 0 0 10px rgba(255, 153, 0, 0.8);
-        }
+  :root{
+    --bg: #101014;
+    --bg-soft: #17171d;
+    --line: rgba(255,255,255,0.08);
+    --text: #ececef;
+    --text-dim: #8b8b93;
+    --accent: #e0a530; /* dragon-pearl gold */
+    --accent-soft: rgba(224,165,48,0.14);
+  }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Chakra Petch', sans-serif;
-        }
+  * { box-sizing: border-box; }
 
-        body {
-            background: radial-gradient(circle, #1a1a2e 0%, #0f0c1b 100%);
-            color: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px 15px;
-            overflow-x: hidden;
-            position: relative;
-        }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Manrope', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
 
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: url('https://www.transparenttextures.com/patterns/black-thread.png');
-            opacity: 0.3;
-            z-index: -1;
-        }
+  body {
+    min-height: 100svh;
+    display: flex;
+    justify-content: center;
+    padding: 64px 20px 40px;
+  }
 
-        /* Header / Logo Khu vực */
-        .header-container {
-            text-align: center;
-            margin-top: 20px;
-            margin-bottom: 30px;
-            width: 100%;
-            max-width: 500px;
-        }
+  /* faint radial glow, single accent, no gradients-on-gradients */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(560px 420px at 50% -8%, rgba(224,165,48,0.10), transparent 70%);
+    pointer-events: none;
+  }
 
-        .badge-coming {
-            background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 12px;
-            text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: 2px;
-            display: inline-block;
-            margin-bottom: 10px;
-            box-shadow: 0 0 15px rgba(255, 51, 0, 0.5);
-            animation: pulse 1.5s infinite;
-        }
+  .page {
+    width: 100%;
+    max-width: 460px;
+    position: relative;
+    z-index: 1;
+  }
 
-        .game-title {
-            font-size: 32px;
-            font-weight: 700;
-            text-transform: uppercase;
-            background: linear-gradient(to bottom, #ffffff 40%, #ffcc00 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 2px 8px rgba(255,153,0,0.5));
-            letter-spacing: 1px;
-            line-height: 1.2;
-        }
+  /* signature: a single orb, referencing "ngọc" (pearl/orb) — one bold move, rest kept quiet */
+  .orb {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 24px;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 32% 28%, #fbe3ad 0%, var(--accent) 42%, #7a5717 100%);
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,0.06),
+      0 12px 30px -8px rgba(224,165,48,0.45);
+  }
 
-        .server-name {
-            font-size: 40px;
-            font-weight: 700;
-            color: #00ffff;
-            text-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff;
-            text-transform: uppercase;
-            margin-top: 5px;
-            display: block;
-            letter-spacing: 3px;
-        }
+  .eyebrow {
+    text-align: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
 
-        /* Hộp thông báo */
-        .notice-box {
-            background: var(--card-bg);
-            border: 1px solid rgba(0, 255, 255, 0.2);
-            padding: 15px;
-            border-radius: 12px;
-            text-align: center;
-            width: 100%;
-            max-width: 450px;
-            margin-bottom: 35px;
-            backdrop-filter: blur(10px);
-            box-shadow: inset 0 0 15px rgba(0, 255, 255, 0.1);
-        }
+  h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: -0.01em;
+    margin: 0 0 8px;
+  }
 
-        .notice-box p {
-            font-size: 15px;
-            color: #b0b3b8;
-            line-height: 1.5;
-        }
+  .sub {
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 14.5px;
+    line-height: 1.5;
+    margin: 0 0 34px;
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-        .notice-box span.highlight {
-            color: #ff9900;
-            font-weight: 700;
-            text-shadow: var(--text-glow);
-        }
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
 
-        /* Khu vực danh sách Nhóm */
-        .section-title {
-            font-size: 16px;
-            text-transform: uppercase;
-            color: #00ffff;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-            text-align: center;
-            width: 100%;
-            font-weight: 600;
-        }
+  .link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 15px 18px;
+    background: var(--bg-soft);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color 0.15s ease, transform 0.15s ease, background 0.15s ease;
+  }
 
-        .groups-grid {
-            width: 100%;
-            max-width: 450px;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-            margin-bottom: 40px;
-        }
+  .link:hover {
+    border-color: rgba(224,165,48,0.45);
+    background: #1b1b22;
+    transform: translateY(-1px);
+  }
 
-        /* Thiết kế nút cộng đồng */
-        .group-btn {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 14px 20px;
-            border-radius: 14px;
-            text-decoration: none;
-            color: #ffffff;
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(5px);
-        }
+  .link:active { transform: translateY(0); }
 
-        .group-btn::before {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%; width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
-            transition: 0.5s;
-        }
+  .link-index {
+    flex: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-        .group-btn:active::before {
-            left: 100%;
-        }
+  .link-text {
+    flex: 1;
+    font-weight: 600;
+    font-size: 15px;
+  }
 
-        .group-btn.zalo-style {
-            border-left: 5px solid #0068ff;
-            box-shadow: 0 4px 15px rgba(0, 104, 255, 0.05);
-        }
-        
-        .group-btn.fb-style {
-            border-left: 5px solid #1877f2;
-            box-shadow: 0 4px 15px rgba(24, 119, 242, 0.05);
-        }
+  .link-arrow {
+    flex: none;
+    color: var(--text-dim);
+    font-size: 16px;
+    transition: transform 0.15s ease, color 0.15s ease;
+  }
 
-        .group-btn:hover, .group-btn:active {
-            transform: translateY(-2px);
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(0, 255, 255, 0.5);
-            box-shadow: 0 5px 15px rgba(0, 255, 255, 0.2);
-        }
+  .link:hover .link-arrow {
+    color: var(--accent);
+    transform: translateX(2px);
+  }
 
-        .btn-left {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
+  footer {
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 12.5px;
+    letter-spacing: 0.02em;
+  }
 
-        .icon-wrapper {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.05);
-            box-shadow: inset 0 0 8px rgba(255,255,255,0.1);
-            overflow: hidden; /* Giữ ảnh bo tròn hoàn chỉnh */
-        }
+  @media (prefers-reduced-motion: reduce) {
+    .link { transition: none; }
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <div class="orb"></div>
+    <div class="eyebrow">Server sắp mở test</div>
+    <h1>Ngọc Rồng</h1>
+    <p class="sub">Tranh thủ tham gia nhóm để nhận thông báo mở server sớm nhất.</p>
 
-        /* Cấu hình hiển thị ảnh zalo.png */
-        .icon-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    <div class="links">
+      <a class="link" href="https://zalo.me/g/acxvjw835" target="_blank" rel="noopener">
+        <span class="link-index">1</span>
+        <span class="link-text">Nhóm Chat 1</span>
+        <span class="link-arrow">→</span>
+      </a>
+      <a class="link" href="https://zalo.me/g/mftkmn654" target="_blank" rel="noopener">
+        <span class="link-index">2</span>
+        <span class="link-text">Nhóm Chat 2</span>
+        <span class="link-arrow">→</span>
+      </a>
+      <a class="link" href="https://zalo.me/g/jcssww622" target="_blank" rel="noopener">
+        <span class="link-index">3</span>
+        <span class="link-text">Nhóm Chat 3</span>
+        <span class="link-arrow">→</span>
+      </a>
+      <a class="link" href="https://zalo.me/g/cxcyjr130" target="_blank" rel="noopener">
+        <span class="link-index">4</span>
+        <span class="link-text">Nhóm Chat 4</span>
+        <span class="link-arrow">→</span>
+      </a>
+      <a class="link" href="https://zalo.me/g/hfl2vzndgjskd0egmdmu" target="_blank" rel="noopener">
+        <span class="link-index">5</span>
+        <span class="link-text">Nhóm Chat 5</span>
+        <span class="link-arrow">→</span>
+      </a>
+      <a class="link" href="https://zalo.me/g/ugyxtyh8qgypyzgbqjuk" target="_blank" rel="noopener">
+        <span class="link-index">6</span>
+        <span class="link-text">Nhóm Chat 6</span>
+        <span class="link-arrow">→</span>
+      </a>
+    </div>
 
-        .fb-style .icon-wrapper {
-            color: #1877f2;
-            background: rgba(24, 119, 242, 0.1);
-            font-size: 20px;
-        }
-
-        .btn-info {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .group-title {
-            font-size: 16px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-
-        .group-desc {
-            font-size: 12px;
-            color: #8a8d93;
-            margin-top: 2px;
-        }
-
-        .btn-right {
-            display: flex;
-            align-items: center;
-        }
-
-        .status-badge {
-            font-size: 11px;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-weight: 600;
-            background: rgba(0, 255, 255, 0.1);
-            color: #00ffff;
-            border: 1px solid rgba(0, 255, 255, 0.2);
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .status-badge.hot {
-            background: rgba(255, 51, 0, 0.1);
-            color: #ff3300;
-            border: 1px solid rgba(255, 51, 0, 0.3);
-        }
-
-        .status-badge i {
-            font-size: 8px;
-        }
-
-        .footer {
-            text-align: center;
-            font-size: 12px;
-            color: #4f535c;
-            margin-top: auto;
-            padding-top: 20px;
-            width: 100%;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 0.9; }
-            50% { transform: scale(1.03); opacity: 1; box-shadow: 0 0 20px rgba(255, 51, 0, 0.8); }
-            100% { transform: scale(1); opacity: 0.9; }
-        }
-    </style>
-    </head>
-    <body>
-
-        <div class="header-container">
-            <div class="badge-coming">Chính Thức Cập Bến</div>
-            <h1 class="game-title">Ngọc Rồng</h1>
-            <span class="server-name">Cindy</span>
-        </div>
-
-        <div class="notice-box">
-            <p>Hệ thống tự động phát <span class="highlight">Mã Quà Tặng
-                    (Giftcode) VIP</span> giới hạn khi tham gia đầy đủ các nhóm
-                cộng đồng bên dưới. Đừng bỏ lỡ cơ hội đua top!</p>
-        </div>
-
-        <h2 class="section-title"><i class="fa-solid fa-users"></i> Tham gia
-            nhóm hóng game</h2>
-
-        <div class="groups-grid">
-
-            <a href="https://zalo.me/g/xxxxxx1" class="group-btn zalo-style"
-                target="_blank">
-                <div class="btn-left">
-                    <div class="icon-wrapper">
-                        <img src="images/zalo.png" alt="Zalo Icon">
-                    </div>
-                    <div class="btn-info">
-                        <span class="group-title">Ngọc Rồng Cindy - Box
-                            1</span>
-                        <span class="group-desc">Cập nhật tiến độ & giao
-                            lưu</span>
-                    </div>
-                </div>
-                <div class="btn-right">
-                    <span class="status-badge hot"><i
-                            class="fa-solid fa-fire"></i> HOT</span>
-                </div>
-            </a>
-
-            <a href="https://zalo.me/g/xxxxxx2" class="group-btn zalo-style"
-                target="_blank">
-                <div class="btn-left">
-                    <div class="icon-wrapper">
-                        <img src="images/zalo.png" alt="Zalo Icon">
-                    </div>
-                    <div class="btn-info">
-                        <span class="group-title">Ngọc Rồng Cindy - Box
-                            2</span>
-                        <span class="group-desc">Cập nhật tiến độ & giao
-                            lưu</span>
-                    </div>
-                </div>
-                <div class="btn-right">
-                    <span class="status-badge hot"><i
-                            class="fa-solid fa-fire"></i> HOT</span>
-                </div>
-            </a>
-
-            <a href="https://zalo.me/g/xxxxxx3" class="group-btn zalo-style"
-                target="_blank">
-                <div class="btn-left">
-                    <div class="icon-wrapper">
-                        <img src="images/zalo.png" alt="Zalo Icon">
-                    </div>
-                    <div class="btn-info">
-                        <span class="group-title">Ngọc Rồng Cindy - Box
-                            3</span>
-                        <span class="group-desc">Cập nhật tiến độ & giao
-                            lưu</span>
-                    </div>
-                </div>
-                <div class="btn-right">
-                    <span class="status-badge"><i
-                            class="fa-solid fa-circle"></i> TỐT</span>
-                </div>
-            </a>
-
-            <a href="https://zalo.me/g/xxxxxx4" class="group-btn zalo-style"
-                target="_blank">
-                <div class="btn-left">
-                    <div class="icon-wrapper">
-                        <img src="images/zalo.png" alt="Zalo Icon">
-                    </div>
-                    <div class="btn-info">
-                        <span class="group-title">Ngọc Rồng Cindy - Box
-                            4</span>
-                        <span class="group-desc">Cập nhật tiến độ & giao
-                            lưu</span>
-                    </div>
-                </div>
-                <div class="btn-right">
-                    <span class="status-badge"><i
-                            class="fa-solid fa-circle"></i> TỐT</span>
-                </div>
-            </a>
-
-            <a href="https://zalo.me/g/xxxxxx5" class="group-btn zalo-style"
-                target="_blank">
-                <div class="btn-left">
-                    <div class="icon-wrapper">
-                        <img src="images/zalo.png" alt="Zalo Icon">
-                    </div>
-                    <div class="btn-info">
-                        <span class="group-title">Ngọc Rồng Cindy - Box
-                            5</span>
-                        <span class="group-desc">Cập nhật tiến độ & giao
-                            lưu</span>
-                    </div>
-                </div>
-                <div class="btn-right">
-                    <span class="status-badge"><i
-                            class="fa-solid fa-circle"></i> TỐT</span>
-                </div>
-            </a>
-
-            <a href="https://zalo.me/g/xxxxxx6" class="group-btn zalo-style"
-                target="_blank">
-                <div class="btn-left">
-                    <div class="icon-wrapper">
-                        <img src="images/zalo.png" alt="Zalo Icon">
-                    </div>
-                    <div class="btn-info">
-                        <span class="group-title">Ngọc Rồng Cindy - Box
-                            6</span>
-                        <span class="group-desc">Cập nhật tiến độ & giao
-                            lưu</span>
-                    </div>
-                </div>
-                <div class="btn-right">
-                    <span class="status-badge"><i
-                            class="fa-solid fa-circle"></i> TỐT</span>
-                </div>
-            </a>
-
-            <a href="https://zalo.me/g/xxxxxx7" class="group-btn zalo-style"
-                target="_blank">
-                <div class="btn-left">
-                    <div class="icon-wrapper">
-                        <img src="images/zalo.png" alt="Zalo Icon">
-                    </div>
-                    <div class="btn-info">
-                        <span class="group-title">Ngọc Rồng Cindy - Box
-                            7</span>
-                        <span class="group-desc">Cập nhật tiến độ & giao
-                            lưu</span>
-                    </div>
-                </div>
-                <div class="btn-right">
-                    <span class="status-badge"><i
-                            class="fa-solid fa-circle"></i> TỐT</span>
-                </div>
-            </a>
-
-            <a href="https://zalo.me/g/xxxxxx8" class="group-btn zalo-style"
-                target="_blank">
-                <div class="btn-left">
-                    <div class="icon-wrapper">
-                        <img src="images/zalo.png" alt="Zalo Icon">
-                    </div>
-                    <div class="btn-info">
-                        <span class="group-title">Ngọc Rồng Cindy - Box
-                            8</span>
-                        <span class="group-desc">Cập nhật tiến độ & giao
-                            lưu</span>
-                    </div>
-                </div>
-                <div class="btn-right">
-                    <span class="status-badge"><i
-                            class="fa-solid fa-circle"></i> TỐT</span>
-                </div>
-            </a>
-
-            <a href="https://zalo.me/g/xxxxxx9" class="group-btn zalo-style"
-                target="_blank">
-                <div class="btn-left">
-                    <div class="icon-wrapper">
-                        <img src="images/zalo.png" alt="Zalo Icon">
-                    </div>
-                    <div class="btn-info">
-                        <span class="group-title">Ngọc Rồng Cindy - Box
-                            9</span>
-                        <span class="group-desc">Cập nhật tiến độ & giao
-                            lưu</span>
-                    </div>
-                </div>
-                <div class="btn-right">
-                    <span class="status-badge"><i
-                            class="fa-solid fa-circle"></i> TỐT</span>
-                </div>
-            </a>
-
-        </div>
-
-        <div class="footer">
-            <p>&copy; 2026 Ngọc Rồng Cindy. All Rights Reserved.</p>
-        </div>
-
-    </body>
+    <footer>Ngọc Rồng · tất cả nhóm chat chính thức</footer>
+  </div>
+</body>
 </html>
