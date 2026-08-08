@@ -3,497 +3,607 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Ngọc Rồng Online — Cổng Vào Game</title>
+      content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Ngọc Rồng Cindy - Cộng Đồng Game Thủ</title>
+    <meta name="description"
+      content="Trang chủ chính thức Ngọc Rồng Cindy - Tham gia cộng đồng game thủ trên Zalo theo từng server.">
+    <link rel="canonical" href="https://nrocindy.online/">
 
-    <!-- Social preview (Open Graph / Facebook / Zalo) -->
+    <link rel="icon" href="images/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16"
+      href="images/favicon-16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+      href="images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="48x48"
+      href="images/favicon-48.png">
+    <link rel="icon" type="image/png" sizes="96x96"
+      href="images/favicon-96.png">
+    <link rel="icon" type="image/png" sizes="192x192"
+      href="images/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512"
+      href="images/favicon-512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon-180.png">
+
     <meta property="og:type" content="website">
-    <meta property="og:title"
-      content="Ngọc Rồng Online — Cổng vào game chính thức">
+    <meta property="og:title" content="Ngọc Rồng Cindy - Cộng Đồng Game Thủ">
     <meta property="og:description"
-      content="Bấm vào để vào server sv1.nrocindy.online và tham gia cộng đồng chính thức.">
+      content="Trang chủ chính thức Ngọc Rồng Cindy - Tham gia cộng đồng game thủ trên Zalo theo từng server.">
+    <meta property="og:url" content="https://nrocindy.online/">
     <meta property="og:image"
-      content="https://nrocindy.online/images/preview.png?v=20260710">
+      content="https://nrocindy.online/images/og-default.png?v=12">
+    <meta property="og:image:secure_url"
+      content="https://nrocindy.online/images/og-default.png?v=12">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:url" content="https://nrocindy.online/">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:locale" content="vi_VN">
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title"
-      content="Ngọc Rồng Online — Cổng vào game chính thức">
+    <meta name="twitter:title" content="Ngọc Rồng Cindy - Cộng Đồng Game Thủ">
     <meta name="twitter:description"
-      content="Bấm vào để vào server sv1.nrocindy.online và tham gia cộng đồng chính thức.">
+      content="Trang chủ chính thức Ngọc Rồng Cindy - Tham gia cộng đồng game thủ trên Zalo theo từng server.">
     <meta name="twitter:image"
-      content="https://nrocindy.online/images/preview.png?v=20260710">
+      content="https://nrocindy.online/images/og-default.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap"
+      rel="stylesheet">
     <style>
-  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
-
   :root{
-    --bg: #0c0c10;
-    --bg-soft: #17171d;
-    --bg-card: #15151b;
-    --line: rgba(255,255,255,0.08);
-    --text: #ececef;
-    --text-dim: #8b8b93;
-    --accent: #e0a530; /* dragon-pearl gold */
-    --accent-2: #ff8a3d; /* warm ember, used sparingly */
-    --accent-soft: rgba(224,165,48,0.14);
-    --good: #37d67a;
+    --bg-1:#1a0a05;
+    --bg-2:#3a1206;
+    --orange-1:#ff7a1a;
+    --orange-2:#ff4d00;
+    --gold:#ffcc4d;
+    --zalo:#0068ff;
+    --text-light:#fff3e6;
+    --text-dim:#e8c9a8;
+    --card-bg:rgba(255,255,255,0.06);
+    --card-border:rgba(255,190,120,0.25);
   }
 
-  * { box-sizing: border-box; }
+  *{box-sizing:border-box; margin:0; padding:0;}
 
-  html, body {
-    margin: 0;
-    padding: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Manrope', sans-serif;
-    -webkit-font-smoothing: antialiased;
+  html{scroll-behavior:smooth;}
+
+  body{
+    font-family:'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    color:var(--text-light);
+    background:
+      radial-gradient(ellipse 120% 60% at 50% -10%, #ffae5a22, transparent 60%),
+      radial-gradient(ellipse 90% 50% at 50% 100%, #ff4d0033, transparent 60%),
+      linear-gradient(180deg, var(--bg-1) 0%, #150703 60%, #0d0402 100%);
+    min-height:100vh;
+    overflow-x:hidden;
+    position:relative;
   }
 
-  body {
-    min-height: 100svh;
-    display: flex;
-    justify-content: center;
-    padding: 56px 20px 40px;
-    position: relative;
-    overflow-x: hidden;
+  /* ---------- Floating energy particles (pure CSS) ---------- */
+  .particles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+    overflow:hidden;
+  }
+  .particles span{
+    position:absolute;
+    bottom:-10%;
+    display:block;
+    width:6px; height:6px;
+    border-radius:50%;
+    background:radial-gradient(circle, var(--gold), var(--orange-2) 70%, transparent 100%);
+    opacity:0.7;
+    animation:rise linear infinite;
+    box-shadow:0 0 8px 2px #ff9a3a99;
+  }
+  @keyframes rise{
+    0%{ transform:translateY(0) translateX(0); opacity:0;}
+    10%{opacity:0.8;}
+    100%{ transform:translateY(-110vh) translateX(20px); opacity:0;}
   }
 
-  /* ambient background: quiet glow + slow-drifting orbs */
-  .bg {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-    overflow: hidden;
+  /* ---------- In-app browser warning banner ---------- */
+  #social-banner{
+    display:none;
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:linear-gradient(90deg, #ff4d00, #ff8a00);
+    color:#fff;
+    padding:10px 14px;
+    box-shadow:0 2px 12px rgba(0,0,0,0.35);
+  }
+  #social-banner.show{display:block;}
+  .banner-inner{
+    max-width:720px;
+    margin:0 auto;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex-wrap:wrap;
+    justify-content:center;
+    text-align:center;
+  }
+  .banner-inner p{
+    font-size:13.5px;
+    line-height:1.4;
+    font-weight:500;
+    flex:1 1 240px;
+  }
+  .banner-inner strong{font-weight:700;}
+  #copy-link-btn{
+    flex:0 0 auto;
+    background:#fff;
+    color:#c73e00;
+    border:none;
+    padding:8px 16px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:13.5px;
+    cursor:pointer;
+    white-space:nowrap;
+    transition:transform .15s ease;
+  }
+  #copy-link-btn:active{transform:scale(0.95);}
+  #copy-link-btn:hover{transform:translateY(-1px);}
+
+  /* ---------- Layout ---------- */
+  main{
+    position:relative;
+    z-index:1;
+    max-width:640px;
+    margin:0 auto;
+    padding:36px 20px 50px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
   }
 
-  .bg::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(600px 440px at 50% -6%, rgba(224,165,48,0.14), transparent 70%);
+  /* ---------- Logo + glow ---------- */
+  .logo-wrap{
+    position:relative;
+    width:150px;
+    height:150px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:18px;
+  }
+  .logo-glow{
+    position:absolute;
+    inset:-40px;
+    background:radial-gradient(circle, #ff9a3aaa 0%, #ff4d0055 40%, transparent 70%);
+    filter:blur(6px);
+    animation:pulse 3.2s ease-in-out infinite;
+    border-radius:50%;
+  }
+  @keyframes pulse{
+    0%,100%{ transform:scale(1); opacity:0.85;}
+    50%{ transform:scale(1.12); opacity:1;}
+  }
+  .logo-orb{
+    position:relative;
+    width:120px;
+    height:120px;
+    z-index:2;
+    object-fit:cover;
+    border-radius:50%;
+    border:3px solid #ffd27f;
+    filter:drop-shadow(0 6px 18px rgba(255,80,0,0.55));
   }
 
-  .bg-orb {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(60px);
-    opacity: 0.16;
-    animation: drift 22s ease-in-out infinite alternate;
+  /* ---------- Title ---------- */
+  .game-name{
+    font-family:'Baloo 2', 'Be Vietnam Pro', sans-serif;
+    font-weight:800;
+    font-size:clamp(28px, 8vw, 40px);
+    line-height:1.15;
+    background:linear-gradient(180deg, #ffe9b3 0%, #ffb347 55%, #ff7a1a 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    text-shadow:0 4px 24px rgba(255,120,0,0.35);
+    letter-spacing:0.5px;
+    margin-bottom:6px;
+  }
+  .game-tagline{
+    font-size:14.5px;
+    color:var(--text-dim);
+    font-weight:500;
+    margin-bottom:6px;
+    letter-spacing:0.3px;
+  }
+  .support-line{
+    font-size:13px;
+    color:var(--text-dim);
+    margin-bottom:26px;
+  }
+  .support-line a{
+    color:var(--gold);
+    font-weight:600;
+    text-decoration:underline;
+    text-underline-offset:2px;
+  }
+  .support-line a:hover{color:#ffe066;}
+
+  /* ---------- CTA ---------- */
+  .cta-row{
+    display:flex;
+    gap:14px;
+    margin-bottom:44px;
+    width:100%;
+    justify-content:center;
+  }
+  .cta-home{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    flex:1 1 0;
+    max-width:220px;
+    font-family:'Baloo 2', sans-serif;
+    font-weight:700;
+    font-size:17px;
+    color:#3a0e00;
+    background:linear-gradient(180deg, #ffe066 0%, #ffb020 55%, #ff7a00 100%);
+    padding:16px 20px;
+    border-radius:999px;
+    text-decoration:none;
+    box-shadow:0 8px 22px rgba(255,120,0,0.45), inset 0 1px 0 rgba(255,255,255,0.5);
+    border:2px solid #ffd27f;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .cta-register{
+    color:#fff3e6;
+    background:linear-gradient(180deg, #3a2a24 0%, #24140e 100%);
+    border:2px solid #ff8a3a;
+    box-shadow:0 8px 22px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.08);
+  }
+  .cta-home:hover{
+    transform:translateY(-2px) scale(1.03);
+    box-shadow:0 12px 28px rgba(255,120,0,0.55), inset 0 1px 0 rgba(255,255,255,0.5);
+  }
+  .cta-register:hover{
+    box-shadow:0 12px 28px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.08);
+  }
+  .cta-home:active{transform:translateY(0) scale(0.98);}
+
+  /* ---------- Community section ---------- */
+  .section-title{
+    font-family:'Baloo 2', sans-serif;
+    font-weight:700;
+    font-size:22px;
+    color:var(--gold);
+    margin-bottom:4px;
+  }
+  .section-sub{
+    font-size:13px;
+    color:var(--text-dim);
+    margin-bottom:20px;
   }
 
-  .bg-orb.a { width: 260px; height: 260px; left: -60px; top: 8%; background: var(--accent); animation-delay: 0s; }
-  .bg-orb.b { width: 220px; height: 220px; right: -50px; top: 46%; background: var(--accent-2); animation-delay: -7s; }
-  .bg-orb.c { width: 200px; height: 200px; left: 12%; bottom: -70px; background: var(--accent); animation-delay: -14s; }
+  .group-title{
+    font-family:'Baloo 2', sans-serif;
+    font-weight:600;
+    font-size:14px;
+    color:var(--text-dim);
+    text-align:left;
+    width:100%;
+    margin:18px 0 10px;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+  }
+  .group-title:first-of-type{margin-top:4px;}
 
-  @keyframes drift {
-    from { transform: translate(0, 0) scale(1); }
-    to   { transform: translate(24px, -18px) scale(1.08); }
+  #server-list, #other-list{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    width:100%;
+  }
+  .other-card{
+    background:var(--card-bg);
+    border:1px solid var(--card-border);
+    border-radius:16px;
+    padding:16px 18px;
+    backdrop-filter:blur(6px);
+  }
+  .other-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:10px;
+  }
+  .server-card{
+    background:var(--card-bg);
+    border:1px solid var(--card-border);
+    border-radius:16px;
+    padding:16px 18px;
+    backdrop-filter:blur(6px);
+  }
+  .server-name{
+    font-family:'Baloo 2', sans-serif;
+    font-weight:700;
+    font-size:16.5px;
+    color:#ffe6c2;
+    margin-bottom:12px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    justify-content:center;
+  }
+  .server-name .dot{
+    width:8px; height:8px; border-radius:50%;
+    background:var(--gold);
+    box-shadow:0 0 8px 2px #ffcc4daa;
+  }
+  .zalo-row{
+    display:flex;
+    gap:10px;
+  }
+  .zalo-btn{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    background:linear-gradient(180deg, #1a8bff, var(--zalo));
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+    font-size:14px;
+    padding:11px 10px;
+    border-radius:12px;
+    box-shadow:0 4px 12px rgba(0,104,255,0.35);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .zalo-btn:hover{transform:translateY(-2px); box-shadow:0 6px 16px rgba(0,104,255,0.5);}
+  .zalo-btn:active{transform:translateY(0) scale(0.97);}
+  .zalo-btn svg{width:18px; height:18px; flex-shrink:0;}
+
+  footer{
+    position:relative;
+    z-index:1;
+    text-align:center;
+    padding:24px 20px 34px;
+    font-size:12px;
+    color:#a3785433;
+    color:#c99b6c99;
   }
 
-  .page {
-    width: 100%;
-    max-width: 520px;
-    position: relative;
-    z-index: 1;
+  /* ---------- Toast ---------- */
+  #toast{
+    position:fixed;
+    left:50%;
+    bottom:24px;
+    transform:translateX(-50%) translateY(20px);
+    background:#241008;
+    color:#ffe6c2;
+    border:1px solid var(--card-border);
+    padding:12px 20px;
+    border-radius:999px;
+    font-size:14px;
+    font-weight:500;
+    box-shadow:0 8px 24px rgba(0,0,0,0.4);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .25s ease, transform .25s ease;
+    z-index:200;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  #toast.show{
+    opacity:1;
+    transform:translateX(-50%) translateY(0);
   }
 
-  /* signature: a single orb, referencing "ngọc" (pearl/orb) */
-  .orb-wrap {
-    width: 84px;
-    height: 84px;
-    margin: 0 auto 22px;
-    position: relative;
-  }
-
-  .orb {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    overflow: hidden;
-    background: var(--bg-soft);
-    border: 3px solid var(--accent);
-    box-shadow:
-      0 0 0 1px rgba(255,255,255,0.06),
-      0 14px 34px -8px rgba(224,165,48,0.5);
-    animation: pulse 2.6s ease-in-out infinite backwards;
-    pointer-events: none;
-  }
-
-  .orb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .orb-wrap::before,
-  .orb-wrap::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    box-shadow: 0 0 0 0 rgba(251,227,173,0.85);
-    animation: orb-ripple 2s ease-out infinite;
-    pointer-events: none;
-  }
-
-  .orb-wrap::after {
-    animation-delay: 1s;
-  }
-
-  @keyframes pulse {
-    0%, 100% { box-shadow: 0 0 0 1px rgba(255,255,255,0.06), 0 14px 34px -8px rgba(224,165,48,0.5); }
-    50%      { box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 14px 44px -6px rgba(224,165,48,0.7); }
-  }
-
-  @keyframes orb-ripple {
-    0%   { box-shadow: 0 0 0 0 rgba(251,227,173,0.85); }
-    100% { box-shadow: 0 0 6px 40px rgba(251,227,173,0); }
-  }
-
-  .status-pill {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    width: fit-content;
-    margin: 0 auto 18px;
-    padding: 6px 14px 6px 10px;
-    border-radius: 999px;
-    background: var(--bg-soft);
-    border: 1px solid var(--line);
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    color: var(--text-dim);
-  }
-
-  .status-pill .dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--good);
-    box-shadow: 0 0 0 0 rgba(55,214,122,0.6);
-    animation: blip 2s ease-in-out infinite;
-  }
-
-  @keyframes blip {
-    0%   { box-shadow: 0 0 0 0 rgba(55,214,122,0.55); }
-    70%  { box-shadow: 0 0 0 6px rgba(55,214,122,0); }
-    100% { box-shadow: 0 0 0 0 rgba(55,214,122,0); }
-  }
-
-  h1 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 32px;
-    font-weight: 700;
-    text-align: center;
-    letter-spacing: -0.01em;
-    margin: 0 0 8px;
-  }
-
-  h1 .accent {
-    background: linear-gradient(120deg, var(--accent), var(--accent-2));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-
-  .sub {
-    text-align: center;
-    color: var(--text-dim);
-    font-size: 14.5px;
-    line-height: 1.5;
-    margin: 0 0 30px;
-    max-width: 360px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  /* primary CTA — the entire point of this page */
-  .cta {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-    padding: 18px 22px;
-    margin-bottom: 14px;
-    border-radius: 16px;
-    border: none;
-    background: linear-gradient(135deg, #f4c765, var(--accent) 55%, var(--accent-2));
-    color: #201404;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 17px;
-    font-weight: 700;
-    text-decoration: none;
-    letter-spacing: 0.01em;
-    overflow: hidden;
-    box-shadow: 0 16px 34px -12px rgba(224,165,48,0.55);
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-  }
-
-  .cta::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -60%;
-    width: 40%;
-    height: 100%;
-    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.55), transparent);
-    transform: skewX(-20deg);
-    transition: left 0.6s ease;
-  }
-
-  .cta:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 20px 40px -12px rgba(224,165,48,0.65);
-  }
-
-  .cta:hover::after { left: 130%; }
-  .cta:active { transform: translateY(0); }
-
-  .cta .arrow { font-size: 18px; transition: transform 0.15s ease; }
-  .cta:hover .arrow { transform: translateX(3px); }
-
-  .server-addr {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
-    padding: 11px 14px;
-    margin-bottom: 40px;
-    border-radius: 12px;
-    background: transparent;
-    border: 1px dashed var(--line);
-    color: var(--text-dim);
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
-  }
-
-  .server-addr:hover {
-    border-color: rgba(224,165,48,0.4);
-    color: var(--text);
-    background: var(--accent-soft);
-  }
-
-  .server-addr svg { flex: none; opacity: 0.8; }
-  .server-addr.copied { border-color: var(--good); color: var(--good); }
-
-  .section-label {
-    text-align: center;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 11.5px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--text-dim);
-    margin: 0 0 14px;
-  }
-
-  .links {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin-bottom: 36px;
-  }
-
-  .link {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 10px;
-    background: var(--bg-card);
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    text-decoration: none;
-    color: var(--text);
-    transition: border-color 0.15s ease, transform 0.15s ease, background 0.15s ease;
-  }
-
-  .link:hover {
-    border-color: rgba(224,165,48,0.45);
-    background: #1b1b22;
-    transform: translateY(-1px);
-  }
-
-  .link:active { transform: translateY(0); }
-
-  .link-index {
-    flex: none;
-    width: 26px;
-    height: 26px;
-    border-radius: 8px;
-    background: var(--accent-soft);
-    color: var(--accent);
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .link-text {
-    flex: 1;
-    font-weight: 600;
-    font-size: 13px;
-    line-height: 1.25;
-  }
-
-  .link-arrow {
-    flex: none;
-    color: var(--text-dim);
-    font-size: 15px;
-    transition: transform 0.15s ease, color 0.15s ease;
-  }
-
-  .link:hover .link-arrow {
-    color: var(--accent);
-    transform: translateX(2px);
-  }
-
-  footer {
-    text-align: center;
-    color: var(--text-dim);
-    font-size: 12.5px;
-    letter-spacing: 0.02em;
-  }
-
-  footer .divider {
-    width: 40px;
-    height: 1px;
-    background: var(--line);
-    margin: 0 auto 16px;
-  }
-
-  footer p { margin: 4px 0; }
-  footer .fine { opacity: 0.7; font-size: 11.5px; }
-
-  @media (prefers-reduced-motion: reduce) {
-     .link, .cta, .orb, .ripple, .status-pill .dot, .bg-orb { animation: none; transition: none; }
+  @media (max-width:380px){
+    .zalo-row{flex-direction:column;}
+    .other-grid{grid-template-columns:1fr;}
+    .cta-row{flex-direction:column; align-items:center;}
+    .cta-home{padding:14px 28px; font-size:16.5px; max-width:280px; width:100%;}
   }
 </style>
   </head>
   <body>
-    <div class="bg" aria-hidden="true">
-      <div class="ripple r1"></div>
-      <div class="ripple r2"></div>
-      <div class="ripple r3"></div>
+
+    <div class="particles" id="particles"></div>
+
+    <div id="social-banner">
+      <div class="banner-inner">
+        <p>⚠️ Bạn đang mở bằng <strong>mạng xã hội</strong> nên sẽ
+          <strong>không đăng ký / tải game</strong> được. Hãy copy
+          link rồi mở bằng Chrome hoặc Safari nhé!</p>
+        <button id="copy-link-btn">📋 Copy link</button>
+      </div>
     </div>
 
-    <div class="page">
-      <div class="orb-wrap">
-        <div class="orb"><img src="images/logo.png" alt="Ngọc Rồng Cindy"></div>
+    <main>
+      <div class="logo-wrap">
+        <div class="logo-glow"></div>
+        <img class="logo-orb" src="images/avatar_cindy.png"
+          alt="Cindy">
       </div>
-      <div class="status-pill"><span class="dot"></span> sv1.nrocindy.online ·
-        online</div>
-      <h1>Ngọc Rồng <span class="accent">CinDy</span></h1>
-      <p class="sub">Đây là cổng vào chính thức. Bấm nút bên dưới để vào
-        thẳng server nhanh chóng!</p>
 
-      <a class="cta" href="https://sv1.nrocindy.online" target="_blank"
-        rel="noopener">
-        <span>Vào Game Ngay</span>
-        <span class="arrow">→</span>
-      </a>
+      <h1 class="game-name" id="game-name">Đang tải...</h1>
+      <p class="game-tagline" id="game-tagline"></p>
+      <p class="support-line">Liên hệ &amp; Hỗ trợ:
+        <a href="https://thanhdistudio.com/support" target="_blank"
+          rel="noopener">Click đây</a>
+      </p>
 
-      <p class="section-label">Cộng đồng chính thức</p>
-      <div class="links">
-        <a class="link" href="https://zalo.me/g/mftkmn654" target="_blank"
-          rel="noopener">
-          <span class="link-index">1</span>
-          <span class="link-text">Nhóm Zalo 1</span>
-          <span class="link-arrow">→</span>
-        </a>
-        <a class="link" href="https://zalo.me/g/acxvjw835" target="_blank"
-          rel="noopener">
-          <span class="link-index">2</span>
-          <span class="link-text">Nhóm Zalo 2</span>
-          <span class="link-arrow">→</span>
-        </a>
-        <a class="link" href="https://zalo.me/g/ugyxtyh8qgypyzgbqjuk"
-          target="_blank"
-          rel="noopener">
-          <span class="link-index">3</span>
-          <span class="link-text">Nhóm Zalo 3</span>
-          <span class="link-arrow">→</span>
-        </a>
-        <a class="link" href="https://zalo.me/g/chhtoc951" target="_blank"
-          rel="noopener">
-          <span class="link-index">4</span>
-          <span class="link-text">Nhóm Zalo 4</span>
-          <span class="link-arrow">→</span>
-        </a>
-        <a class="link" href="https://zalo.me/g/jcssww622"
+      <div class="cta-row">
+        <a class="cta-home cta-download" id="cta-download" href="#"
           target="_blank" rel="noopener">
-          <span class="link-index">5</span>
-          <span class="link-text">Nhóm Zalo 5</span>
-          <span class="link-arrow">→</span>
+          ⬇️ Tải Game
         </a>
-        <a class="link" href="https://zalo.me/g/cxcyjr130"
+        <a class="cta-home cta-register" id="cta-register" href="#"
           target="_blank" rel="noopener">
-          <span class="link-index">6</span>
-          <span class="link-text">Nhóm Zalo 6</span>
-          <span class="link-arrow">→</span>
-        </a>
-        <a class="link" href="https://zalo.me/g/euxjrn298"
-          target="_blank" rel="noopener">
-          <span class="link-index">7</span>
-          <span class="link-text">Nhóm Hóng NroCindy</span>
-          <span class="link-arrow">→</span>
+          📝 Đăng Ký
         </a>
       </div>
 
-      <footer>
-        <div class="divider"></div>
-        <p>Ngọc Rồng Cindy · trang trung chuyển chính thức</p>
-        <p class="fine">Không phải trang đăng nhập — mọi thao tác tài khoản diễn
-          ra trong game.</p>
-      </footer>
-    </div>
+      <h2 class="section-title">Cộng Đồng Game Thủ</h2>
+      <p class="section-sub">Tham gia nhóm Zalo theo server hoặc nhóm chung</p>
+
+      <h3 class="group-title">Nhóm Theo Server</h3>
+      <div id="server-list"></div>
+
+      <h3 class="group-title">Nhóm Khác</h3>
+      <div id="other-list"></div>
+    </main>
+
+    <footer>© 2026 · Trang cộng đồng chính thức</footer>
+
+    <div id="toast">✅ Đã copy link!</div>
 
     <script>
-      (function () {
-        var btn = document.getElementById('copyAddr');
-        var label = document.getElementById('copyAddrText');
-        var original = label.textContent;
-        btn.addEventListener('click', function () {
-          var value = btn.getAttribute('data-value');
-          var done = function () {
-            btn.classList.add('copied');
-            label.textContent = 'Đã copy!';
-            setTimeout(function () {
-              btn.classList.remove('copied');
-              label.textContent = original;
-            }, 1600);
-          };
-          if (navigator.clipboard && window.isSecureContext) {
-            navigator.clipboard.writeText(value).then(done).catch(done);
-          } else {
-            var ta = document.createElement('textarea');
-            ta.value = value;
-            ta.style.position = 'fixed';
-            ta.style.opacity = '0';
-            document.body.appendChild(ta);
-            ta.select();
-            try { document.execCommand('copy'); } catch (e) {}
-            document.body.removeChild(ta);
-            done();
-          }
-        });
-      })();
-    </script>
+// ======================================================
+// CONFIG — sửa các giá trị bên dưới cho đúng game của bạn
+// ======================================================
+const CONFIG = {
+  gameName: "Ngọc Rồng Cindy",
+  tagline: "Game Nhập Vai HOT Năm 2026",
+  downloadUrl: "https://sv1.nrocindy.online",
+  registerUrl: "https://sv1.nrocindy.online/register",
+  servers: [
+    {
+      name: "Server 1 - Cindy Server 1",
+      zalo1: "https://zalo.me/g/acxvjw835",
+      zalo2: "https://zalo.me/g/ugyxtyh8qgypyzgbqjuk"
+    }
+  ],
+  otherLinks: [
+    "https://zalo.me/g/mftkmn654",
+    "https://zalo.me/g/chhtoc951",
+    "https://zalo.me/g/jcssww622",
+    "https://zalo.me/g/cxcyjr130",
+    "https://zalo.me/g/hfl2vzndgjskd0egmdmu",
+    "https://zalo.me/g/sgwees441",
+    "https://zalo.me/g/wbftbjlgnn1kl2a4z3pp"
+  ]
+};
+// ======================================================
+
+const ZALO_ICON = `<svg viewBox="0 0 48 48" fill="currentColor"><path d="M24 4C12.95 4 4 12.06 4 22c0 5.6 2.87 10.6 7.36 13.9-.24 2-1 4.4-2.7 6.8-.2.28.06.66.4.58 3.9-.9 7-2.6 8.9-3.9 1.9.5 3.9.8 6 .8 11.05 0 20-8.06 20-18S35.05 4 24 4z"/></svg>`;
+
+function render(){
+  document.getElementById('game-name').textContent = CONFIG.gameName;
+  document.getElementById('game-tagline').textContent = CONFIG.tagline;
+
+  document.getElementById('cta-download').href = CONFIG.downloadUrl;
+  document.getElementById('cta-register').href = CONFIG.registerUrl;
+
+  const list = document.getElementById('server-list');
+  list.innerHTML = CONFIG.servers.map(s => `
+    <div class="server-card">
+      <div class="server-name"><span class="dot"></span>${s.name}</div>
+      <div class="zalo-row">
+        <a class="zalo-btn" href="${s.zalo1}" target="_blank" rel="noopener">${ZALO_ICON} Nhóm Zalo 1</a>
+        <a class="zalo-btn" href="${s.zalo2}" target="_blank" rel="noopener">${ZALO_ICON} Nhóm Zalo 2</a>
+      </div>
+    </div>
+  `).join('');
+
+  const otherList = document.getElementById('other-list');
+  otherList.innerHTML = `
+    <div class="other-card">
+      <div class="server-name"><span class="dot"></span>Nhóm Khác</div>
+      <div class="other-grid">
+        ${CONFIG.otherLinks.map((url, i) => `
+          <a class="zalo-btn" href="${url}" target="_blank" rel="noopener">${ZALO_ICON} Nhóm Zalo ${i + 1}</a>
+        `).join('')}
+      </div>
+    </div>
+  `;
+
+  document.title = CONFIG.gameName + " - Cộng Đồng Game Thủ";
+}
+
+function spawnParticles(){
+  const wrap = document.getElementById('particles');
+  const count = window.innerWidth < 500 ? 14 : 24;
+  for(let i=0;i<count;i++){
+    const p = document.createElement('span');
+    const left = (i / count) * 100 + (i % 3);
+    const size = 3 + (i % 4) * 1.5;
+    const duration = 6 + (i % 6) * 1.4;
+    const delay = (i % 10) * 0.7;
+    p.style.left = left + '%';
+    p.style.width = size + 'px';
+    p.style.height = size + 'px';
+    p.style.animationDuration = duration + 's';
+    p.style.animationDelay = delay + 's';
+    wrap.appendChild(p);
+  }
+}
+
+// ---------- In-app browser detection ----------
+function isInAppBrowser(){
+  const ua = navigator.userAgent || navigator.vendor || window.opera || "";
+  const patterns = [
+    /FBAN|FBAV|FB_IAB|FBSV/i,      // Facebook / Messenger
+    /Instagram/i,
+    /Zalo/i,
+    /Telegram/i,
+    /Line\//i,
+    /MicroMessenger/i,             // Zalo/WeChat webview
+    /TikTok|BytedanceWebview/i,
+    /Twitter/i,
+    /wv\)/i                        // generic Android WebView marker
+  ];
+  return patterns.some(p => p.test(ua));
+}
+
+function showToast(msg){
+  const toast = document.getElementById('toast');
+  toast.textContent = msg;
+  toast.classList.add('show');
+  clearTimeout(showToast._t);
+  showToast._t = setTimeout(() => toast.classList.remove('show'), 2200);
+}
+
+function copyCurrentLink(){
+  const url = window.location.href;
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(url)
+      .then(() => showToast('✅ Đã copy link! Mở Chrome/Safari và dán vào nhé'))
+      .catch(() => fallbackCopy(url));
+  } else {
+    fallbackCopy(url);
+  }
+}
+
+function fallbackCopy(url){
+  const ta = document.createElement('textarea');
+  ta.value = url;
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.focus();
+  ta.select();
+  try{
+    document.execCommand('copy');
+    showToast('✅ Đã copy link! Mở Chrome/Safari và dán vào nhé');
+  }catch(e){
+    showToast('⚠️ Vui lòng tự copy link ở thanh địa chỉ');
+  }
+  document.body.removeChild(ta);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  render();
+  spawnParticles();
+
+  if(isInAppBrowser()){
+    document.getElementById('social-banner').classList.add('show');
+  }
+  document.getElementById('copy-link-btn').addEventListener('click', copyCurrentLink);
+});
+</script>
   </body>
 </html>
