@@ -132,30 +132,34 @@
     background:linear-gradient(90deg, #ff4d00, #ff8a00);
     border-radius:16px;
     padding:10px 14px;
+    border:1.5px solid rgba(255,214,140,0.4);
     box-shadow:0 4px 16px rgba(0,0,0,0.4);
+    overflow:hidden;
   }
+  /* small bright dot that travels around the fixed border edge */
   .banner-inner::before{
     content:"";
     position:absolute;
-    inset:-3px;
-    z-index:-1;
-    border-radius:19px;
-    padding:3px;
-    background:conic-gradient(from 0deg,
-      rgba(255,204,77,0.15) 0deg,
-      rgba(255,204,77,0.15) 250deg,
-      #fff8dc 275deg,
-      #ffd76b 290deg,
-      rgba(255,204,77,0.15) 305deg,
-      rgba(255,204,77,0.15) 360deg);
-    -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-    mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-    -webkit-mask-composite:xor;
-    mask-composite:exclude;
-    animation:borderSpin 2.4s linear infinite;
+    width:14px;
+    height:14px;
+    border-radius:50%;
+    background:radial-gradient(circle, #fff 0%, #ffe9a8 45%, rgba(255,214,89,0) 75%);
+    box-shadow:0 0 10px 4px #ffe08a, 0 0 18px 9px rgba(255,180,60,0.6);
+    transform:translate(-50%, -50%);
+    animation:borderRun 2.6s linear infinite;
+    z-index:2;
+    pointer-events:none;
   }
-  @keyframes borderSpin{
-    to{ transform:rotate(360deg); }
+  @keyframes borderRun{
+    0%   { top:0%;   left:0%;   }
+    12.5%{ top:0%;   left:50%;  }
+    25%  { top:0%;   left:100%; }
+    37.5%{ top:50%;  left:100%; }
+    50%  { top:100%; left:100%; }
+    62.5%{ top:100%; left:50%;  }
+    75%  { top:100%; left:0%;   }
+    87.5%{ top:50%;  left:0%;   }
+    100% { top:0%;   left:0%;   }
   }
   .banner-inner.shake{
     animation:bannerShake 0.5s cubic-bezier(.36,.07,.19,.97) both;
